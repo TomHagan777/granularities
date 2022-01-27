@@ -1,0 +1,321 @@
+<!DOCTYPE html><html lang="en">
+  <head>
+    <script src="p5.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+#surfaceBox01{
+  width: 350px;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+  border-top-right-radius: 10px;
+  margin-top: 10px;
+  margin-left: 665px;
+  padding-bottom: 110px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+#moduleBox01{
+  width: 155px;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-left: 665px;
+  padding-bottom: 70px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: rgb(35, 35, 35);
+}
+
+#overrideBox01{
+  width: 350px;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin-top: 133px;
+  margin-left: 665px;
+  padding-bottom: 105px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: rgb(25, 25, 25);
+}
+
+#overrideBox02{
+  width: 350px;
+  border-radius: 10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  margin-top: 250px;
+  margin-left: 665px;
+  padding-bottom: 90px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 125px;
+  height: 1px;
+  border-radius: 20px;
+  background: rgb(143, 143, 143);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
+  outline: black solid 1px;
+  cursor: ew-resize;
+}
+
+.buttonClass{
+  background-color: rgba(100, 100, 100);
+  font-family: Helvetica, 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  cursor:cell;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.buttonClass:hover{
+  opacity: 1;
+}
+
+.saveButtonClass{
+  background-color: rgb(100, 100, 100);
+  font-family: Helvetica, 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  cursor: s-resize;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.saveButtonClass:hover{
+  background-color: rgb(50, 50, 50);
+  opacity: 1;
+}
+
+.moduleButtonClass{
+  background-color: rgb(160, 160, 160);
+  border: none;
+  border-radius: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  cursor: cell;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.moduleButtonClass:hover{
+  opacity: 1;
+}
+
+.inputButtonClass{
+  background-color: rgb(65, 65, 65);
+  font-family: Helvetica, Arial, sans-serif;
+  text-transform: capitalize;
+  color: rgb(141, 141, 141);
+  border: none;
+  width:200px;
+  border-radius: 20px;
+  padding-top: 2px;
+  padding-left: 40px;
+  padding-bottom: 2px;
+  cursor: cell;
+}
+
+/* input[type="file"] {
+  display: none;
+} */
+
+#line1 {
+  width: 127px;
+  border-top: 1px solid white;
+  margin-top: 340px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-left: 780px;
+}
+
+#line2 {
+  width: 127px;
+  border-top: 1px solid white;
+  margin-top: 345px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-left: 780px;
+}
+
+#line3 {
+  width: 127px;
+  border-top: 1px solid white;
+  margin-top: 350px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-left: 780px;
+}
+
+#line4 {
+  width: 127px;
+  border-top: 1px solid white;
+  margin-top: 355px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-left: 780px;
+}
+
+#line5 {
+  width: 127px;
+  border-top: 1px solid white;
+  margin-top: 360px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-left: 780px;
+}
+
+#line6 {
+  width: 127px;
+  border-top: 1px solid white;
+  margin-top: 365px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-left: 780px;
+}
+
+#line7 {
+  width: 127px;
+  border-top: 1px solid white;
+  margin-top: 370px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-left: 780px;
+}
+
+#line8 {
+  width: 127px;
+  border-top: 1px solid white;
+  margin-top: 375px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-left: 780px;
+}
+
+#line9 {
+  width: 127px;
+  border-top: 1px solid white;
+  margin-top: 380px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-left: 780px;
+}
+
+#line10 {
+  width: 127px;
+  border-top: 1px solid white;
+  margin-top: 385px;
+  
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-left: 780px;
+}
+
+#line11 {
+  width: 127px;
+  border-top: 1px solid white;
+  margin-top: 390px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-left: 780px;
+}
+
+#line12 {
+  width: 127px;
+  border-top: 1px solid white;
+  margin-top: 395px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-left: 780px;
+}
+
+#line13 {
+  width: 127px;
+  border-top: 1px solid white;
+  margin-top: 400px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-left: 780px;
+}
+
+</style>
+  </head>
+  <body>
+    <script src="sketch.js"></script>
+    <div id=surfaceBox01></div>
+    <div id=moduleBox01></div>
+    <div id=overrideBox01></div>
+    <!-- <div id=overrideBox02></div> -->
+    <div id=line1></div>
+    <div id=line2></div>
+    <div id=line3></div>
+    <div id=line4></div>
+    <div id=line5></div>
+    <div id=line6></div>
+    <div id=line7></div>
+    <div id=line8></div>
+    <div id=line9></div>
+    <div id=line10></div>
+    <div id=line11></div>
+    <div id=line12></div>
+    <div id=line13></div>
+</body>
+</html>
