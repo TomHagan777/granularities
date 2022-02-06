@@ -30,9 +30,6 @@ let img;
 function preload(){
   cap = createCapture(VIDEO);
   cap.hide();
-  //// initial image load (not working – has CORS issues)
-  // img = createImg('03. Files/Sample Image (optional)/Jesus_Christ.jpeg','');
-  // img.hide();
 }
 
 function setup() {
