@@ -189,8 +189,14 @@ function draw() {
     imageMode(CENTER); //scale landscape proportionally
     image(img, width/2, height/2, width, img.height*width/img.width);
     loadPixels();
+
+  } else if ((img) && (img.width === img.height)){ //detect square images
+    background(0);
+    imageMode(CENTER); //scales square images proportionally
+    image(img, width/2, height/2, img.width*height/img.height, height);
+    loadPixels();
+
   } else {
-    
     //Original Capture
     image(cap, 0, 0, cap.width, cap.height);
     tint(255, opacSlider5.value())
